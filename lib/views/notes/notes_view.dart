@@ -8,15 +8,15 @@ import 'package:mynotes/utilities/dialogs/logout_dialog.dart';
 import 'package:mynotes/views/notes/notes_list_view.dart';
 
 class NotesView extends StatefulWidget {
-  const NotesView({Key? key}) : super(key: key);
+  const NotesView({super.key});
 
   @override
-  _NotesViewState createState() => _NotesViewState();
+  State<NotesView> createState() => _NotesViewState();
 }
 
 class _NotesViewState extends State<NotesView> {
   late final FirebaseCloudStorage _notesService;
-  String get userId => AuthService.firebase().currentUser!.email;
+  String get userId => AuthService.firebase().currentUser!.id;
 
   @override
   void initState() {
